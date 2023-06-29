@@ -5,8 +5,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 logger = logging.getLogger(__name__)
 
-host_Name = ""
-serverPort = 8080
+_hostName = ""
+_serverPort = 8080
 
 
 class MyServer(BaseHTTPRequestHandler):
@@ -22,9 +22,9 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 
-def run_server(host-Name="", serverPort=8080):
-    webServer = HTTPServer((host-Name, serverPort), MyServer)
-    print("Server started http://%s:%s" % (host-Name, serverPort))
+def run_server(hostName="", serverPort=8080):
+    webServer = HTTPServer((hostName, serverPort), MyServer)
+    print("Server started http://%s:%s" % (hostName, serverPort))
 
     try:
         webServer.serve_forever()
@@ -36,4 +36,4 @@ def run_server(host-Name="", serverPort=8080):
 
 
 if __name__ == "__main__":
-    run_server()
+    run_server(hostName=_hostName, serverPort=_serverPort)
