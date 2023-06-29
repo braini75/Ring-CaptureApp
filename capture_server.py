@@ -16,6 +16,9 @@ MyServer Class
 """
 class MyServer(BaseHTTPRequestHandler):
     def do_get(self):
+        """
+        do get
+        """
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
@@ -28,10 +31,10 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 
-"""
-main function
-"""
 def run_server(host_name="", server_port=8080):
+    """
+    main function
+    """
     web_server = HTTPServer((host_name, server_port), MyServer)
     print("Server started http://%s:%s" % (host_name, server_port))
 

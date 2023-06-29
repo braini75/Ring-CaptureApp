@@ -16,6 +16,9 @@ port_list = ast.literal_eval(config['main'].get('port_list'))
 
 
 def main():
+    """
+    main func
+    """
     # Get a list of all sections
     logging.basicConfig(filename=log_file, level=logging.getLevelName(level))
     logging.info('Started')
