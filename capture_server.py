@@ -1,11 +1,13 @@
 # Python 3 server example
-from http.server import BaseHTTPRequestHandler, HTTPServer
 import logging
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
 
 logger = logging.getLogger(__name__)
 
-hostName = ""
+host_Name = ""
 serverPort = 8080
+
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -20,17 +22,17 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 
-def run_server(hostName="", serverPort=8080):
-        webServer = HTTPServer((hostName, serverPort), MyServer)
-        print("Server started http://%s:%s" % (hostName, serverPort))
+def run_server(host-Name="", serverPort=8080):
+    webServer = HTTPServer((host-Name, serverPort), MyServer)
+    print("Server started http://%s:%s" % (host-Name, serverPort))
 
-        try:
-            webServer.serve_forever()
-        except KeyboardInterrupt:
-            pass
+    try:
+        webServer.serve_forever()
+    except KeyboardInterrupt:
+        pass
 
-        webServer.server_close()
-        print("Server stopped.")
+    webServer.server_close()
+    print("Server stopped.")
 
 
 if __name__ == "__main__":

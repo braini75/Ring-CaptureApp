@@ -3,9 +3,9 @@
 """
 import logging
 import capture_server
-from configparser import ConfigParser
 import ast
 import threading
+from configparser import ConfigParser
 
 config = ConfigParser()
 config.read('etc/settings.cfg')
@@ -13,6 +13,7 @@ config.read('etc/settings.cfg')
 log_file = config['logging'].get('access_log_file')
 level = config['logging'].get('log_level')
 port_list = ast.literal_eval(config['main'].get('port_list'))
+
 
 def main():
     # Get a list of all sections
