@@ -1,11 +1,11 @@
 """
-
+main.py
 """
 import logging
-import capture_server
 import ast
 import threading
 from configparser import ConfigParser
+import capture_server
 
 config = ConfigParser()
 config.read('etc/settings.cfg')
@@ -32,4 +32,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
